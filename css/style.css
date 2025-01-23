@@ -1,0 +1,581 @@
+body {
+    font-family: "Zen Kaku Gothic Antique", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+a:hover {
+    opacity: 0.7;
+    transition: all 0.5s ease-in;
+}
+
+/* index.php */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+header h1 {
+    width: 150px;
+    margin: 0 auto;
+}
+main {
+    padding: 50px 0;
+}
+.edit {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    gap: 10px;
+}
+.edit li:first-child {
+    border-right: 1px solid #333;
+    padding-right: 10px;
+}
+/* 評価部分 */
+.input-range {
+    display: none;
+}
+.range-group {
+    position: relative;
+}
+.stars .rec_value {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+.stars .rec_value:before {
+    content: "★";
+    font-size: 20px;
+    color: #aaa;
+}
+.stars .rec_value.on:before {
+    content: "★";
+    color: #fc3;
+}
+/* フォームレイアウト */
+form {
+    width: 800px;
+    margin: 0 auto;
+}
+form h2 {
+    margin-bottom: 5px;
+    line-height: 35px;
+}
+form > div {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+form input {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+form input[type=text],form input[type=password] {
+    height: 35px;
+    width: 100%;
+    padding: 0 10px;
+}
+form select {
+    width: 200px;
+    height: 35px;
+    padding: 0 10px;
+}
+form textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+form label input {
+    margin-right: 10px;
+}
+.submit button {
+    grid-column: 2/3;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: #bfdad1;
+    font-size: 16px;
+}
+
+/* read.php */
+.container {
+    width: 360px;
+    margin: 0 auto;
+}
+.container h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.container figure {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1254 / 839;
+}
+.container figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.archive {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    align-items: center;
+    gap: 30px 20px;
+}
+.point {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+}
+.point li {
+    font-size: 11px;
+    background: #f09d9d;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* single.php */
+.single {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.single h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 30px;
+}
+.single figure {
+    margin-bottom: 30px;
+}
+.back {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+}
+.back a {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #666;
+}
+.point {
+    margin-bottom: 20px;
+}
+.memo {
+    line-height: 1.7;
+    margin: 20px 0;
+}
+#map {
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+}
+
+/* write.php */
+.complete {
+    text-align: center;
+    margin: 200px 0;
+}
+
+/* 検索 */
+.search {
+    background: #eee;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.search form div {
+    display: block;
+    margin-bottom: 50px;
+}
+.search form div h2 {
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.search .check_area {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 20px 0;
+}
+.search .submit {
+    margin: 0;
+}
+.null_mes {
+    text-align: center;
+    margin: 100px 0;
+}
+
+/* nav */
+.menu {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    top: 20px;
+    right: 0;
+    margin-top: 50px;
+    padding: 0 0 10px 0;
+    transition: 0.3s linear;
+    transform: scale(1, 0);
+    transform-origin: top;
+    background: #fff;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+.menu li {
+    border-bottom: 1px solid rgb(75, 75, 75);
+    padding: 15px 0;
+    margin: 0 54px;
+}
+
+/* メニューボタン */
+.menu-btn {
+    display: none;
+}
+
+.menu-btn:checked~.menu {
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: 0.3 linear;
+}
+
+.menu-icon {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navicon {
+    background: #333;
+    display: block;
+    height: 3px;
+    width: 26px;
+    position: relative;
+    transition: 0.3 linear;
+    z-index: 2;
+}
+
+.navicon:before,
+.navicon:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #333;
+    transition: 0.3s linear;
+}
+
+.navicon::before {
+    top: 9px;
+}
+
+.navicon:after {
+    bottom: 9px;
+}
+
+/* ハンバーガーメニューアニメーション */
+.menu-btn:checked~.menu-icon .navicon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.menu-btn:checked~.menu-icon .navicon:after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+.menu-btn:checked~.menu-icon .navicon {
+    background: rgba(0, 0, 0, 0);
+    transition: 0.2s linear;
+}
+
+/* エラーメッセージ */
+form p {
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+/* ログインページ */
+.login form {
+    width: 500px;
+    margin: 0 auto;
+}
+.uid {
+    position: absolute;
+    top: 40px;
+    right: 100px;
+}
+
+.update,.message {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    opacity: 0.8;
+    animation: hidden 0.3s ease-in 2s forwards;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+
+}
+@keyframes hidden {
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* エラー */
+.error input,.error select,.error textarea{
+    border: 3px solid red;
+}
+.error_text {
+    margin-top: 10px;
+    font-size: 12px;
+    color: red;
+}
+
+/* イベント */
+.calendar {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+.calendar h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+td {
+    height: 80px;
+    width: 14%;
+}
+
+.event {
+    background-color: #f2f2f2;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 4px;
+}
+.pager {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+/* ポップアップ */
+#popup {
+    display: none;
+}
+
+#overlay {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 70;
+    width: 100%;
+    height: 100%;
+}
+
+#bg_gray {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 80;
+}
+
+#window {
+    width: 80%;
+    max-width: 500px;
+    padding: 30px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.6);
+    z-index: 90;
+    opacity: 0;
+}
+
+#btn_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#btn_close:hover {
+    opacity: 0.7;
+}
+
+#btn_close span,
+#btn_close span::before {
+    display: block;
+    height: 3px;
+    width: 20px;
+    border-radius: 3px;
+    background: #333;
+}
+
+#btn_close span {
+    transform: rotate(45deg);
+}
+
+#btn_close span::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    transform: rotate(-90deg);
+}
+
+#popup:checked~#overlay {
+    visibility: visible;
+}
+
+#popup:checked~#overlay #window {
+    animation: fadein 500ms forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fadein {
+    100% {
+        opacity: 1;
+    }
+}
+
+.popup_form {
+    width: 100%;
+}
+.popup_form div {
+    display: block;
+}
+.detail_ttle {
+    position: relative;
+}
+.register {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    background: #fc3;
+    color: #fff;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.register:hover {
+    transform: scale(1.1, 1.1);
+    opacity: 0.8;
+}
+
+/* カレンダーポップアップ */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+.popup-content h3 {
+    margin-bottom: 20px;
+}
+.popup-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.event-title {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+.event-title:hover {
+    color: #0056b3;
+}
+.event-description {
+    display: none;
+}
