@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include('header.php');
 loginCheck();
 
@@ -27,7 +31,7 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // カレンダー表示
 function drawCalendar($year, $month, $events)
 {
-    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+    $daysInMonth = date('t', strtotime("$year-$month-01"));
     $firstWeekday = date('w', strtotime("$year-$month-01"));
     echo "<section class='calendar'>";
     echo "<h2>" . $year . "年 " . $month . "月</h2>";
