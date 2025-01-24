@@ -531,7 +531,28 @@ td {
     transform: scale(1.1, 1.1);
     opacity: 0.8;
 }
+.popup_form button {
+    width: 100%;
+    border: none;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    outline: none;
+    border: 1px solid #f09d9d;
+    background-color: #fff;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    font-size: 16px;
+    letter-spacing: 0.5em;
+}
 
+.popup_form button:hover {
+    color: #fff;
+    border: 1px solid #f09d9d;
+    background-color: #f09d9d;
+}
 /* カレンダーポップアップ */
 .popup {
     display: none;
